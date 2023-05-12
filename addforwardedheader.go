@@ -57,7 +57,12 @@ func (plugin *Plugin) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 		Forwarded = append(Forwarded, "proto="+Proto)
 	}
 
-	req.Header.Set("Forwarded", strings.Join(Forwarded, ";"))
+	ReqForwarded := strings.TrimSpace(req.Header.Get("Forwarded"))
+	if len(ReqForwarded) > 0 {
+		req.Header.Set("Forwarded", ReqForwarded + ", " + strings.Join(Forwarded, ";"))
+	} else {
+		req.Header.Set("Forwarded", strings.Join(Forwarded, ";"))
+	}
 
 	plugin.next.ServeHTTP(rw, req)
 
