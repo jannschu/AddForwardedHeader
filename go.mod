@@ -1,3 +1,3 @@
-module github.com/jerrywoo96/AddForwardedHeader
+module github.com/jannschu/AddForwardedHeader
 
 go 1.20

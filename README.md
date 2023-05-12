@@ -16,8 +16,8 @@ GitHub: [https://github.com/jerrywoo96/AddForwardedHeader](https://github.com/je
 experimental:
   plugins:
     AddForwardedHeader:
-      moduleName: github.com/jerrywoo96/AddForwardedHeader
-      version: v1.0.1
+      moduleName: github.com/jannschu/AddForwardedHeader
+      version: v1.1.0
 ```
 
 ### Dynamic
